@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report Card Generator</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+  <section class="panel" id="form-panel">
+    <h2>Enter student details</h2>
+    <form id="f" novalidate>
+      <label for="college">College name</label>
+      <input id="college" placeholder="e.g. Government Polytechnic College" autocomplete="organization">
+      <div class="row">
+        <div><label for="branch">Branch</label><input id="branch" placeholder="e.g. Computer Science"></div>
+        <div><label for="section">Section</label><input id="section" placeholder="e.g. A"></div>
+      </div>
+      <div class="row">
+        <div><label for="name">Student name</label><input id="name" placeholder="Full name" autocomplete="name"></div>
+        <div><label for="roll">Roll no.</label><input id="roll" placeholder="e.g. 21CS045"></div>
+      </div>
+      <div class="row">
+        <div><label for="exam">Exam</label><input id="exam" placeholder="e.g. Semester 3"></div>
+        <div><label for="year">Academic year</label><input id="year" placeholder="e.g. 2025-26"></div>
+      </div>
+
+      <label>Subjects and marks</label>
+      <div class="sub sub-head"><span>Subject</span><span>Marks</span><span>Out of</span><span></span></div>
+      <div id="subjects"></div>
+      <button type="button" class="btn ghost" id="add">+ Add subject</button>
+
+      <label for="pass">Pass percentage per subject</label>
+      <input id="pass" type="number" min="0" max="100" value="40">
+
+      <div class="error" id="err" role="alert"></div>
+      <div class="actions">
+        <button type="button" class="btn primary" id="gen">Generate report card</button>
+        <button type="button" class="btn ghost" id="print">Print / Save as PDF</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="preview" aria-live="polite">
+    <div class="empty">Fill in the details and select <b>Generate report card</b>.</div>
+  </section>
+</div>
+
+</body>
+</html>
